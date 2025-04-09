@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+@use "../layout/" as *;
+
+header{
+  // display: none;
+  opacity: 0;
+  width: 100%;
+  height: 8rem;
+  background-color: $color_18;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  color: #fff;
+  padding-inline: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo{
+    border: 0.2rem solid #fff;
+    width: 9rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    span{
+      @include flexCenter;
+      width: 100%;
+      // border: 1px solid #fff;
+      padding-block: 0.2rem;
+    }
+  }
+  nav ul{
+    display: flex;
+    gap: 5rem;
+    a{
+      font-size: 1.8rem;
+    }
+  }
+}

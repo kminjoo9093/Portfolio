@@ -1,0 +1,27 @@
+@use "../abstracts/" as *;
+
+.skill-badges{
+  padding-block: 1rem 3rem;
+  $skills: (
+    html: #F67415,
+    css: #30A9DC,
+    scss: #E189B1,
+    js: #F1BF26,
+    swiper: #0080FF,
+  );
+  em{
+    @each $skill, $color in $skills{
+      &.#{$skill}{
+        background-color: #{$color};
+      }
+    }
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    padding-inline: 1em;
+    line-height: 1.6em;
+    border-radius: 1.6rem;
+  }
+}

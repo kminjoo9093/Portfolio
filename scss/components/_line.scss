@@ -1,0 +1,51 @@
+@use "../abstracts/" as *;
+
+.bg-lines {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  .ver-wrap {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    .line {
+      height: 0;
+      opacity: 0;
+      border-right: 0.1rem solid $color_18;
+      animation: ver-line .5s ease-in forwards;
+    }
+  }
+  .hor-wrap {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    .line {
+      width: 0;
+      border-bottom: 0.1rem solid $color_18;
+      animation: hor-line 1s ease-in forwards;
+    }
+  }
+}
+
+@keyframes ver-line {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 100vh;
+  }
+}
+@keyframes hor-line {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100vw;
+  }
+}

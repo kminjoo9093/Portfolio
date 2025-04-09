@@ -1,0 +1,18 @@
+@mixin m0auto($width:null){
+  width: $width;
+  margin: 0 auto;
+}
+
+@mixin positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @content;
+}
+
+@mixin flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
