@@ -1,3 +1,4 @@
+@use "../abstracts/" as *;
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 /* 폰트 초기화 */
@@ -6,4 +7,26 @@ body{
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
   color: #333;
+}
+
+.section-title{
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: $color_3;
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  z-index: 999;
+  writing-mode:sideways-lr;
+  // text-orientation: upright;
+  // white-space: nowrap;
+  #about &{
+    // transform: rotate(-90deg) translate( -15rem, -127%);
+    // transform: translate( -15rem, -127%);
+  }
+  #project &{
+    // transform: rotate(-90deg) translate( -15rem, -110%);
+    // transform: translate( -15rem, -110%);
+  }
 }

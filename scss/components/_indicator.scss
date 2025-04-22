@@ -1,0 +1,43 @@
+@use "../abstracts/" as *;
+
+.scroll-indicator{
+  width: 100%;
+  height: 10rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  span{
+    display: inline-block;
+    width: 1.5rem;
+    height: 0.7rem;
+    background-color: #fff;
+    opacity: 0;
+  }
+  .arrow-l{
+    transform: translateX(50%) skewY(35deg);
+    animation: indicator-l 1s ease-in-out infinite 5s;
+  }
+  .arrow-r{
+    transform: translateX(50%) skewY(-35deg);
+    animation: indicator-r 1s ease-in-out infinite 5s;
+  }
+}
+@keyframes indicator-l{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(50%) skewY(35deg) translateY(200%);
+  }
+}
+@keyframes indicator-r{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(50%) skewY(-35deg) translateY(200%);
+  }
+}

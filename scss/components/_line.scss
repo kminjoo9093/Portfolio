@@ -12,7 +12,7 @@
     .line {
       height: 0;
       opacity: 0;
-      border-right: 0.1rem solid $color_18;
+      border-right: 0.1rem solid #fff;
       animation: ver-line .5s ease-in forwards;
     }
   }
@@ -23,7 +23,7 @@
     grid-template-rows: repeat(4, 1fr);
     .line {
       width: 0;
-      border-bottom: 0.1rem solid $color_18;
+      border-bottom: 0.1rem solid #fff;
       animation: hor-line 1s ease-in forwards;
     }
   }

@@ -1,43 +1,30 @@
 gsap.registerPlugin(ScrollTrigger);
 
 export const runChat = () => {
-
   const introTimeLine = gsap.timeline({
     scrollTrigger: {
       trigger: ".intro",
       start: "0 0",
       end: "+=1500",
-      scrub: 2,
+      scrub: 1,
       pin: true,
+      // pinSpacing: false,
       anticipatePin: 1,
-      markers: true,
-      // once: true,
-      onLeave: () => {
-        gsap.to('header', { opacity: 1, duration: 1});
-        // gsap.to('.pin-spacer', { display: "none", duration: 1});
-        // gsap.to('.about', { display: "block", duration: 0});
-        // gsap.to('.about', { opacity: 1, duration: 1, delay: 1});
+      // markers: true,
+      //once: true,
+      onsLeave: () => {      // gsap.fromTo(
+        //   ".puzzle",
+        //   { yPercent: 100 },
+        //   { yPercent: -10, duration: 1 },
+        // );
+        // gsap.to('header', { opacity: 1, duration: 1});
+        // gsap.fromTo('header', { opacity: 0, duration: 5, y: "-100%"}, {opacity: 1, duration: 5, y: 0 });
       },
     },
   });
 
   introTimeLine
-    .fromTo(
-      ".chat-bottom-el.first",
-      { display: "none", x: 20, opacity: 0 },
-      { display: "block", x: 0, opacity: 1, duration: 5, delay: 1}, 1
-    )
-    .fromTo(
-      ".chat-bottom-el.sec",
-      { display: "none", x: -40, opacity: 0 },
-      { display: "block", x: 0, opacity: 1, duration:5, delay: 3 }
-    )
-    .fromTo(
-      ".chat-bottom-el.third",
-      { display: "none", x: 60, opacity: 0 },
-      { display: "block", x: 0, opacity: 1, duration: 5, delay: 5 }
-    )
-    .to(".chat", { display: "none", opacity: 0, duration: 5, delay: 7})
+    .to(".chat", { display: "none", opacity: 0, duration: 5, delay: 2 }, 1)
     .to(".name-wrap .m", { opacity: 1, duration: 1, delay: 0.4 })
     .to(".name-wrap .o1", { opacity: 1, duration: 0.5, delay: 0.6 })
     .to(".name-wrap .n", { opacity: 1, duration: 0.5, delay: 0.8 })
@@ -62,12 +49,49 @@ export const runChat = () => {
     });
   });
   introTimeLine
-    .to('.name-wrap .l1', { height: "100%", opacity: 1, duration: 0.8})
-    .to('.name-wrap .l2', { width: "100%", opacity: 1, duration: 0.8})
-    .to('.name-wrap .l3', { height: "100%", opacity: 1, duration: 1.2})
-    .to('.name-wrap .l4', { width: "100%", opacity: 1, duration: 1.5})
-    .to('.name-wrap', { scale: 0.15, duration: 3, delay: 1})
-    .to('.name-wrap', { left: 0, top: 0, duration: 4, opacity: 0.5, delay: 2})
-    .to('.name-wrap', { display: "none", delay: 2})
-    // .to('header', { opacity: 1, duration: 1});
+    .to(".name-wrap .l1", { height: "100%", opacity: 1, duration: 0.8 })
+    .to(".name-wrap .l2", { width: "100%", opacity: 1, duration: 0.8 })
+    .to(".name-wrap .l3", { height: "100%", opacity: 1, duration: 1.2 })
+    .to(".name-wrap .l4", { width: "100%", opacity: 1, duration: 1.5 })
+    .to(".scroll-indicator", { display: "none" })
+    .to(".name-wrap", { opacity: 0, duration: 10, delay: 3, ease: 'none' })
+    // .add("fade")
+    .fromTo(
+      "header",
+      { opacity: 0, duration: 5, y: "-100%" },
+      { opacity: 1, duration: 5, y: 0, delay: 2 },
+      // "fade"
+    );
+  // .fromTo(
+  //   ".puzzle",
+  //   { y: "100%", duration: 5 },
+  //   { y: "-20%", duration: 5 },
+  //   "fade"
+  // );
+
+  const projectsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#project",
+      start: "0% 15%",
+      end: "100% 100%",
+      scrub: 1,
+      // pin: '#project .section-title',
+      // pinSpacing: false,
+      markers: true,
+    },
+  });
+
+  projectsTimeline.to("#project .section-title", {
+    y: () => {
+      const project = document.querySelector("#project");
+      const title = document.querySelector("#project .section-title");
+      const projectHeight = project.offsetHeight;
+      const titleHeight = title.offsetHeight;
+      // const centerY = window.innerHeight / 2 - titleHeight;
+
+      // y 이동량: 중간까지 + 섹션 끝까지 이동
+      return projectHeight - titleHeight;
+    },
+    ease: "none", //ease 'none' 하는게 중요함
+  });
 };

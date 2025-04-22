@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 .skill-badges{
-  padding-block: 1rem 3rem;
+  padding-block: 0 2rem;
   $skills: (
     html: #F67415,
     css: #30A9DC,

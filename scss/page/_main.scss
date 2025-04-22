@@ -1,54 +1,160 @@
 @use "../abstracts/" as *;
 @use "../layout/" as *;
 
-main{
+main {
   // 헤더높이 동적 변경하게 바꾸기
-  margin-top: 8rem;
+  // margin-top: 8rem;
 }
-.about{
-  height: 100vh;
-  // opacity: 0;
-  background: $color_18;
-}
-.project{
-  // 임시
-  height: 80rem;
-  padding-block: 13rem;
-  @extend .padInline;
-  > div{
-    height: 100%; //임시높이
-    display: flex;
-    gap: 6rem;
-    perspective: 1500px;
-    align-items: center;
-  }
-  &_info{
-    // background-color: #ddd;
-    flex: 1;
-    padding: 3rem;
-    .title{
-      font-size: 4rem;
-      font-weight: 700;
-      padding-bottom: 4rem;
+#about {
+  height: 70vh;
+  border: 1px solid gold;
+  padding-inline: 3rem;
+  position: relative;
+  z-index: 99;
+  > div {
+    height: 100%;
+    // border-radius: 10rem 10rem 0 0;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    // overflow: hidden;
+    > div {
+      @include flexCenter {
+        flex-direction: column;
+      }
     }
-    .description{
-      padding-bottom: 3rem;
-      p{
+    .about_left {
+      .about_top{
+        display: flex;
+        align-items: center;
+        gap: 6rem;
+      }
+      .profile-img {
+        width: 20rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 0.5rem solid #000;
+        overflow: hidden;
+      }
+      .name {
+        font-size: 3rem;
+        padding-bottom: 2rem;
+        letter-spacing: 2px;
+      }
+      .birth {
+        font-size: 2rem;
+        margin-top: 1rem;
+      }
+      .personality {
+        margin-top: 1rem;
+        li {
+          font-size: 1.8rem;
+          display: inline-block;
+          margin-right: 1rem;
+        }
+      }
+      .attitude {
+        font-size: 2rem;
+        margin-top: 8rem;
+        p{
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    .about_right{
+      @include flexCenter;
+      .profile-info{
+        padding-left: 3rem;
+        width: 85%;
+        h3{
+          font-size: 2.4rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          padding-bottom: 1.5rem;
+        }
+        .date{
+          margin-right: 1rem;
+        }
+        ul{
+          &:not(:last-of-type){
+            padding-bottom: 4rem;
+          }
+          li{
+            font-size: 1.8rem;
+            line-height: 3rem;
+          }
+        }
+        .skills{
+          display: flex;
+          gap: 2rem;
+          li{
+            width: 7rem;
+            aspect-ratio: 1;
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+            &:nth-child(2){
+              img{
+                transform: scale(1.15);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#project {
+  // 임시
+  // height: 80rem;
+  // border: 1px solid red;
+  position: relative;
+  // padding-block: 13rem;
+  @extend .padInline;
+  > div {
+    height: 100%; //임시높이
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    perspective: 1500px;
+  }
+  [class*="piece"]{
+    height: 100vh;
+    // border: 1px solid #000;
+    @include flexCenter;
+    .content-wrap{
+      padding-inline: 4rem;
+      width: 100%;
+      // border: 1px solid red;
+    }
+  }
+  .project_info {
+    // background-color: #ddd;
+    // flex: 1;
+    padding: 3rem 5rem;
+    .title {
+      font-size: 3.6rem;
+      font-weight: 700;
+      padding-bottom: 2rem;
+    }
+    .description {
+      padding-bottom: 2rem;
+      p {
         font-size: 2rem;
         line-height: 1.5em;
       }
     }
-    span{
-      font-size: 1.6rem;
+    span {
+      font-size: 1.8rem;
       display: block;
-      &:not(:last-child){
-        margin-bottom: 1rem;
-      }
+      line-height: 2.5rem;
     }
-    .link-btns{
+    .link-btns {
       display: flex;
       align-items: center;
-      a{
+      a {
         width: 10rem;
         height: 6rem;
         text-transform: uppercase;
@@ -60,23 +166,23 @@ main{
         text-align: center;
         position: relative;
         transition: 0.4s;
-        &:hover{
+        &:hover {
           font-size: 1.8rem;
         }
       }
-      .site-link{
+      .site-link {
         background-color: $color_12;
         color: #fff;
         border-radius: 1rem 0 0 1rem;
         transition: 0.4s;
-        &:hover{
+        &:hover {
           background-color: $color_20;
-          &::after{
+          &::after {
             background-color: $color_20;
           }
         }
-        &::after{
-          content: '';
+        &::after {
+          content: "";
           position: absolute;
           z-index: 10;
           top: 50%;
@@ -88,8 +194,8 @@ main{
           background-color: $color_12;
           transition: 0.4s;
         }
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           z-index: 10;
           top: 0;
@@ -101,16 +207,16 @@ main{
           background-color: $color_20;
         }
       }
-      .code-link{
-        background-color: $color3;
+      .code-link {
+        background-color: $color_3;
         color: #333;
         border-radius: 0 1rem 1rem 0;
         transition: 0.4s;
-        &:hover{
+        &:hover {
           background-color: $color_11;
         }
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           z-index: 10;
           top: 100%;
