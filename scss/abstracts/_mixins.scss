@@ -1,10 +1,5 @@
 @use "./vars" as *;
 
-@mixin m0auto($width:null){
-  width: $width;
-  margin: 0 auto;
-}
-
 @mixin positionCenter {
   position: absolute;
   top: 50%;

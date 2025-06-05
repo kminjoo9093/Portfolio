@@ -6,9 +6,7 @@
   position: relative;
   background: $color_18;
   .section-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCenter;
     width: 100vw;
     height: inherit;
     position: absolute;
@@ -29,24 +27,6 @@
     background-position: 0 0;
     position: fixed;
     z-index: 100;
-    // animation: chatBg 6s ease 2s infinite;
-    // @keyframes chatBg {
-    //   0% {
-    //     background-position: 0% 0%;
-    //   }
-    //   25% {
-    //     background-position: 10% 45%;
-    //   }
-    //   50% {
-    //     background-position: 30% 80%;
-    //   }
-    //   75% {
-    //     background-position: 0% 60%;
-    //   }
-    //   100% {
-    //     background-position: 0% 0%;
-    //   }
-    // }
     &-top {
       h2 {
         font-size: clamp(2.6rem, 2.8vw, 3.2rem);
@@ -135,9 +115,7 @@
     > div {
       font-size: 5vw;
       font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flexCenter;
       opacity: 0;
       color: #fff;
     }

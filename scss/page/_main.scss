@@ -157,8 +157,6 @@ html {
     }
   }
   [class*="piece"] {
-    // height: 100vh;
-    // padding-block: 10rem;
     @include flexCenter;
     .content-wrap {
       width: 100%;
