@@ -1,3 +1,5 @@
+@use "./vars" as *;
+
 @mixin m0auto($width:null){
   width: $width;
   margin: 0 auto;
@@ -16,4 +18,33 @@
   align-items: center;
   justify-content: center;
   @content;
+}
+
+@mixin gradient-hover{
+  background: $gradient_1;
+  background-size: 400%;
+  animation: bgAni 0.7s linear forwards;
+}
+
+@mixin calc-100Per ($width:false, $widthNum:0, $height:false, $heightNum:0){
+  @if $width and $widthNum != null {
+    width: calc(100% - #{$widthNum});
+  }
+  @if $height and $heightNum != null {
+    height: calc(100% - #{$heightNum});
+  }
+}
+
+@mixin screenWidth($width){
+  @media (max-width: $width) {
+    @content;
+  }
+}
+@keyframes bgAni {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

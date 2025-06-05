@@ -1,8 +1,7 @@
 @use "../abstracts/" as *;
 @use "../layout/" as *;
 
-header{
-  // display: none;
+header {
   opacity: 0;
   width: 100%;
   height: 8rem;
@@ -15,8 +14,10 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  .logo{
+  @include screenWidth($tablet) {
+    padding-inline: 2rem;
+  }
+  .logo {
     border: 0.2rem solid #fff;
     width: 9rem;
     display: grid;
@@ -24,18 +25,26 @@ header{
     justify-items: center;
     font-size: 1.6rem;
     font-weight: 500;
-    span{
+    @include screenWidth($tablet) {
+      transform: scale(0.9);
+    }
+    span {
       @include flexCenter;
       width: 100%;
-      // border: 1px solid #fff;
       padding-block: 0.2rem;
     }
   }
-  nav ul{
+  nav ul {
     display: flex;
-    gap: 5rem;
-    a{
+    gap: 7rem;
+    a {
       font-size: 2.2rem;
+    }
+    @include screenWidth($tablet) {
+      gap: 4rem;
+      a {
+        font-size: 2rem;
+      }
     }
   }
 }

@@ -1,24 +1,32 @@
 @use "../abstracts/" as *;
 
-.puzzle{
-  // border: 1px solid #000;
+.puzzle {
   padding-block: 20rem 10rem;
   background: linear-gradient(to bottom, #fff, $color_18 25%);
-  // margin-top: -10%;
+  perspective: 900px;
+  @include screenWidth($laptop) {
+    background: linear-gradient(to bottom, #fff, $color_18 10%);
+  }
 }
 [class*="piece"] {
-  // border: 1px solid #000;
   position: relative;
-  padding: 3rem 5rem;
+  min-height: 50rem;
+  padding: 17% 13%;
   background-color: #fff;
+  opacity: 0;
+  @include screenWidth($laptop) {
+    padding: 12% 10%;
+  }
 }
-.piece_1{
-  box-shadow: 0.2rem 0 0.3rem $color_18;
-  z-index: 10;
-  border-radius: 10rem 0 0 0;
-  // border: 5px solid $color_8;
-  &::before{
-    content: '';
+.piece_1,
+.piece_9 {
+  box-shadow: 0.2rem 0 0.3rem $color_18, inset 0 -0.2rem 0.3rem $color_18;
+  z-index: 20;
+  @include screenWidth($laptop) {
+    border-radius: 10rem 10rem 0 0;
+  }
+  &::before {
+    content: "";
     width: 25%;
     aspect-ratio: 1;
     border-right: 1rem solid $color_18;
@@ -29,12 +37,29 @@
     top: 50%;
     transform: translate(50%, -50%);
     z-index: -1;
+    @include screenWidth($laptop) {
+      width: 17%;
+      right: 50%;
+      top: 100%;
+      border-right: none;
+      border-bottom: 1rem solid $color_18;
+    }
   }
 }
-.piece_2{
+.piece_1 {
+  border-radius: 10rem 0 0 0;
+  @include screenWidth($laptop) {
+    border-radius: 10rem 10rem 0 0;
+  }
+}
+.piece_2 {
   border-radius: 0 10rem 0 0;
-  &::before{
-    content: '';
+  box-shadow: inset 0 -0.2rem 0.3rem $color_18;
+  @include screenWidth($laptop) {
+    border-radius: 0;
+  }
+  &::before {
+    content: "";
     width: 20%;
     aspect-ratio: 1;
     border-bottom: 1rem solid $color_18;
@@ -44,18 +69,18 @@
     right: 50%;
     top: 100%;
     transform: translate(50%, -50%);
+    @include screenWidth($laptop) {
+      width: 17%;
+    }
   }
 }
-.piece_4{
-  // opacity: 0;
-}
-#project{
-  [class*="piece"]:nth-child(2n-1){
-    border-right: 2px solid $color_18;
-    border-top: 2px solid $color_18;
-    &:not(:nth-child(1)){
-      &::before{
-        content: '';
+#projects {
+  [class*="piece"]:nth-child(2n-1) {
+    box-shadow: 0.2rem 0 0.3rem $color_18, inset 0 -0.2rem 0.3rem $color_18;
+    z-index: 20;
+    &:not(:nth-child(1)) {
+      &::before {
+        content: "";
         width: 25%;
         aspect-ratio: 1;
         border-top: 1rem solid $color_18;
@@ -66,10 +91,13 @@
         top: 0;
         transform: translate(50%, -50%);
         z-index: 1;
+        @include screenWidth($laptop) {
+          width: 17%;
+        }
       }
     }
-    &::after{
-      content: '';
+    &::after {
+      content: "";
       width: 23%;
       aspect-ratio: 1;
       border-right: 1rem solid $color_18;
@@ -80,12 +108,20 @@
       top: 50%;
       transform: translate(50%, -30%);
       z-index: 1;
+      @include screenWidth($laptop) {
+        width: 17%;
+        right: 50%;
+        top: 100%;
+        transform: translate(50%, -50%);
+        border-right: none;
+        border-bottom: 1rem solid $color_18;
+      }
     }
   }
-  [class*="piece"]:nth-child(2n){
-    border-top: 2px solid $color_18;
-    &::before{
-      content: '';
+  [class*="piece"]:nth-child(2n) {
+    box-shadow: inset 0 -0.2rem 0.3rem $color_18;
+    &::before {
+      content: "";
       width: 25%;
       aspect-ratio: 1;
       border-bottom: 1rem solid $color_18;
@@ -96,6 +132,33 @@
       top: 100%;
       transform: translate(50%, -50%);
       z-index: 1;
+      @include screenWidth($laptop) {
+        display: none;
+      }
+    }
+  }
+  .piece_7{
+    box-shadow: inset 0 0.3rem 0.5rem $color_18;
+  }
+}
+#contact {
+  [class^="piece"] {
+    min-height: 70rem;
+  }
+  .piece_9 {
+    border-radius: 0 0 0 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include screenWidth($laptop) {
+      border-radius: 0;
+    }
+  }
+  .piece_10 {
+    border-radius: 0 0 10rem 0;
+    box-shadow: inset 0 -0.2rem 0.3rem $color_18;
+    @include screenWidth($laptop) {
+    border-radius: 0 0 10rem 10rem;
     }
   }
 }

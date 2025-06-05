@@ -7,7 +7,10 @@
     css: #30A9DC,
     scss: #E189B1,
     js: #F1BF26,
+    jquery: #0769AD,
     swiper: #0080FF,
+    bxslider: #FF1653,
+    gsap: #01E447,
   );
   em{
     @each $skill, $color in $skills{

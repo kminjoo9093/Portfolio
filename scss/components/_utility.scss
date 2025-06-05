@@ -1,0 +1,91 @@
+@use "../abstracts/" as *;
+
+.utility {
+  position: fixed;
+  bottom: 6rem;
+  right: 1.5rem;
+  z-index: 9999;
+  a {
+    display: block;
+    width: clamp(8rem, 9vw, 9rem);
+    padding: 1.5rem 1rem;
+    position: relative;
+    transition: 0.4s;
+    cursor: pointer;
+    &::before {
+      content: "";
+      width: 22%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: absolute;
+      background-color: inherit;
+    }
+    &.link_github {
+      border-radius: 1rem 1rem 0 0;
+      background-color: $color_3;
+      &::before {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: 9;
+      }
+      .link-content::before{
+        background: url(../../images/icon-github.svg) no-repeat center / 4rem auto;
+      }
+      .link-content::after{
+        color: #000;
+      }
+    }
+    &.link_email {
+      border-radius: 0 0 1rem 1rem;
+      background-color: $color_12;
+      &::before {
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+      .link-content::before{
+        background: url(../../images/icon-mail.svg) no-repeat center / 4rem auto;
+      }
+    }
+    .link-content {
+      width: 100%;
+      height: 5rem;
+      position: relative;
+      overflow: hidden;
+      &::before, &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+      }
+      &::before{
+        content: "";
+        left: 0;
+      }
+      &::after{
+        content: attr(data-content);
+        left: 100%;
+        font-size: clamp(1.5rem, 1.5vw, 1.8rem);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+      }
+      
+    }
+  }
+  a:hover{
+    .link-content{
+      &::before{
+        left: -100%;
+      }
+      &::after{
+        left: 0;
+      }
+    }
+  }
+}

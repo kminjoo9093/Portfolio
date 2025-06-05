@@ -8,6 +8,7 @@
     <!-- gsap cdn -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
   </head>
   <body>
     <header>
@@ -21,9 +22,9 @@
       </h1>
       <nav>
         <ul>
-          <li><a href="">About Me</a></li>
-          <li><a href="">Projects</a></li>
-          <li><a href="">Github</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -56,7 +57,7 @@
             <div class="chat-bottom">
               <div class="chat-bottom-el first">
                 <div class="chat-profile self">
-                  <img src="images/self.jpeg" alt="" />
+                  <img src="images/profile_me.jpg" alt="me" />
                 </div>
                 <p class="speak q">
                   퍼즐 한 조각을 찾고 싶어.<br />도와줄 수 있어?
@@ -64,15 +65,15 @@
               </div>
               <div class="chat-bottom-el sec">
                 <div class="chat-profile">
-                  <img src="images/ai.jpg" alt="" />
+                  <img src="images/profile_ai.jpg" alt="ai" />
                 </div>
                 <p class="speak a">
-                  물론이죠! 퍼즐에 대해 좀 더 자세히 설명해 주세요.
+                  물론이죠! <br>퍼즐에 대해 좀 더 자세히 설명해 주세요.
                 </p>
               </div>
               <div class="chat-bottom-el third">
                 <div class="chat-profile self">
-                  <img src="images/self.jpeg" alt="" />
+                  <img src="images/profile_me.jpg" alt="me" />
                 </div>
                 <p class="speak q">내 퍼즐은 말이야....</p>
               </div>
@@ -103,9 +104,9 @@
             <div class="about_left piece_1">
               <div class="about_top">
                 <div class="profile-img">
-                  <img src="./images/self.jpeg" alt="" />
+                  <img src="./images/profile_me.jpg" alt="profile" />
                 </div>
-                <div>
+                <div class="profile-info">
                   <p class="name">강민주</p>
                   <span class="birth">1999. 12. 06</span>
                   <ul class="personality">
@@ -118,22 +119,42 @@
               <div class="attitude">
                 <p>
                   집념과 창의력을 바탕으로 기술을 효과적으로 구현하여<br />
-                  사용자에게 만족도 높은 경험을 제공하겠습니다
+                  사용자에게 만족도 높은 경험을 제공하겠습니다!
                 </p>
                 <p>
                   배움을 게을리 하지 않는 자세로 <br />
-                  웹의 무한한 가능성을 열어가는 퍼블리셔가 되겠습니다
+                  변화하는 웹 환경에 발맞추는 퍼블리셔가 되겠습니다!
                 </p>
               </div>
             </div>
             <div class="about_right piece_2">
-              <div class="profile-info">
+              <div class="qualifications">
                 <h3>skills</h3>
                 <ul class="skills">
-                  <li><img src="./images/html.svg.png" alt="" /></li>
-                  <li><img src="./images/css3-logo.png" alt="" /></li>
-                  <li><img src="./images/scss.png" alt="" /></li>
-                  <li><img src="./images/js.png" alt="" /></li>
+                  <li>
+                    <img
+                      src="./images/logo_html.webp"
+                      alt="html"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="./images/logo_css.webp"
+                      alt="css"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="./images/logo_scss.webp"
+                      alt="scss"
+                      loading="lazy"
+                    />
+                  </li>
+                  <li>
+                    <img src="./images/logo_js.webp" alt="js" loading="lazy" />
+                  </li>
                 </ul>
                 <h3>certificate</h3>
                 <ul class="certificate">
@@ -149,8 +170,8 @@
                 <h3>education</h3>
                 <ul class="education">
                   <li>
-                    <span class="date">2023.05.10 ~ 2023.07.27</span> 메타버스
-                    플랫폼 웹쇼핑몰과 영상제작 양성 과정 수료
+                    <span class="date">2023.05.10 ~ 2023.07.27</span> 웹쇼핑몰과
+                    영상제작 양성 과정 수료
                   </li>
                   <li>
                     <span class="date">2023.02</span> 창원대학교 의류학 학사
@@ -161,21 +182,36 @@
             </div>
           </div>
         </section>
-        <section id="project">
+        <section id="projects">
           <h2 class="section-title">Projects</h2>
           <div class="web-center">
             <div class="piece_3">
               <div class="content-wrap">
-                <div class="card">
-                  <div class="front">
-                    <p class="num">1</p>
+                <div class="web-image">
+                  <img src="./images/preview_nh.jpg" alt="nh기업뱅킹 웹사이트 클론 미리보기" loading="lazy" />
+                </div>
+                <div class="go-links">
+                  <div class="link-border">
+                    <a
+                      href="https://kminjoo9093.github.io/NHBank/"
+                      class="site-link"
+                      target="_blank"
+                      >go site
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
-                  <div class="back">
-                    <img src="./images/project_preview1.png" alt="" />
+                  <div class="link-border">
+                    <a
+                      href="https://github.com/kminjoo9093/NHBank"
+                      class="code-link"
+                      target="_blank"
+                      >code review
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
                 </div>
                 <div class="project_info">
-                  <h2 class="title">메가스터디북스</h2>
+                  <h2 class="title">NH 기업뱅킹</h2>
                   <div class="skill-badges">
                     <em class="html">HTML</em>
                     <em class="scss">SCSS</em>
@@ -183,187 +219,295 @@
                     <em class="swiper">SWIPER</em>
                   </div>
                   <div class="description">
-                    <p>SCSS 사용으로 효율적 스타일링,</p>
-                    <p>데이터 바인딩으로 인한 UI 동적 업데이트에 중점을 둔</p>
-                    <p>반응형 사이트 클론 코딩</p>
+                    <p>웹 접근성을 고려하여 ARIA 속성을 사용하고</p>
+                    <p>Tab 키로 주요 기능에 접근할 수 있도록 구현한</p>
+                    <p>PC 적응형 사이트 클론 코딩</p>
                   </div>
-                  <span>작업 범위 : 메인 페이지, 로그인 페이지</span>
+                  <span>작업 범위 : 메인 페이지</span>
                   <span>개인 작업 퍼블리싱 100%</span>
-                  <div class="link-btns">
-                    <a href="" class="site-link">go<br />site</a>
-                    <a href="" class="code-link">code<br />review</a>
-                  </div>
                 </div>
               </div>
             </div>
             <div class="piece_4">
               <div class="content-wrap">
-                <div class="card">
-                  <div class="front">
-                    <p class="num">1</p>
+                <div class="web-image">
+                  <img src="./images/preview_mega.jpg" alt="메가스터디북스 웹사이트 클론 미리보기" loading="lazy" />
+                </div>
+                <div class="go-links">
+                  <div class="link-border">
+                    <a
+                      href="https://kminjoo9093.github.io/MegaStudyBooks_clone/"
+                      class="site-link"
+                      target="_blank"
+                      >go site
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
-                  <div class="back">
-                    <img src="./images/project_preview1.png" alt="" />
+                  <div class="link-border">
+                    <a
+                      href="https://github.com/kminjoo9093/MegaStudyBooks_clone"
+                      class="code-link"
+                      target="_blank"
+                      >code review
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
                 </div>
                 <div class="project_info">
                   <h2 class="title">메가스터디북스</h2>
-                  <div class="description">
-                    <p>SCSS 사용으로 효율적 스타일링,</p>
-                    <p>데이터 바인딩으로 인한 UI 동적 업데이트에 중점을 둔</p>
-                    <p>반응형 사이트 클론 코딩</p>
-                  </div>
-                  <span>작업 범위 : 메인 페이지, 로그인 페이지</span>
-                  <span>개인 작업 퍼블리싱 100%</span>
                   <div class="skill-badges">
                     <em class="html">HTML</em>
                     <em class="scss">SCSS</em>
                     <em class="js">JS</em>
                     <em class="swiper">SWIPER</em>
                   </div>
-                  <div class="link-btns">
-                    <a href="" class="site-link">go<br />site</a>
-                    <a href="" class="code-link">code<br />review</a>
+                  <div class="description">
+                    <p>SCSS 사용으로 효율적 스타일링,</p>
+                    <p>데이터 바인딩으로 인한 UI 동적 업데이트에 중점을 둔</p>
+                    <p>반응형 사이트 클론 코딩</p>
                   </div>
+                  <span>작업 범위 : 메인, 로그인 페이지</span>
+                  <span>개인 작업 퍼블리싱 100%</span>
                 </div>
               </div>
             </div>
             <div class="piece_5">
               <div class="content-wrap">
-                <div class="card">
-                  <div class="front">
-                    <p class="num">1</p>
+                <div class="web-image">
+                  <img src="./images/preview_honda.jpg" alt="혼다더고 웹사이트 클론 미리보기" loading="lazy" />
+                </div>
+                <div class="go-links">
+                  <div class="link-border">
+                    <a href="" class="site-link" target="_blank"
+                      >go site
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
-                  <div class="back">
-                    <img src="./images/project_preview1.png" alt="" />
+                  <div class="link-border">
+                    <a
+                      href="https://github.com/kminjoo9093/Honda-redesign"
+                      class="code-link"
+                      target="_blank"
+                      >code review
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
                 </div>
                 <div class="project_info">
-                  <h2 class="title">메가스터디북스</h2>
-                  <div class="description">
-                    <p>SCSS 사용으로 효율적 스타일링,</p>
-                    <p>데이터 바인딩으로 인한 UI 동적 업데이트에 중점을 둔</p>
-                    <p>반응형 사이트 클론 코딩</p>
-                  </div>
-                  <span>작업 범위 : 메인 페이지, 로그인 페이지</span>
-                  <span>개인 작업 퍼블리싱 100%</span>
+                  <h2 class="title">혼다 "The go"</h2>
                   <div class="skill-badges">
                     <em class="html">HTML</em>
-                    <em class="scss">SCSS</em>
+                    <em class="css">CSS</em>
                     <em class="js">JS</em>
                     <em class="swiper">SWIPER</em>
+                    <em class="gsap">GSAP</em>
                   </div>
-                  <div class="link-btns">
-                    <a href="" class="site-link">go<br />site</a>
-                    <a href="" class="code-link">code<br />review</a>
+                  <div class="description">
+                    <p>사용자 편의성을 고려한 UI 개선과</p>
+                    <p>GSAP 활용으로 인터랙티브 효과를 구현한</p>
+                    <p>반응형 사이트 리디자인 및 클론 코딩</p>
                   </div>
+                  <span>작업 범위 : 메인, 로그인 페이지</span>
+                  <span>개인 작업 퍼블리싱 100%</span>
                 </div>
               </div>
             </div>
             <div class="piece_6">
               <div class="content-wrap">
-                <div class="card">
-                  <div class="front">
-                    <p class="num">1</p>
+                <div class="web-image">
+                  <img
+                    src="./images/preview_starbucks.jpg"
+                    alt="스타벅스 웹사이트 클론 미리보기"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="go-links">
+                  <div class="link-border">
+                    <a
+                      href="https://kminjoo9093.github.io/Starbucks/"
+                      class="site-link"
+                      target="_blank"
+                      >go site
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
-                  <div class="back">
-                    <img src="./images/project_preview1.png" alt="" />
+                  <div class="link-border">
+                    <a
+                      href="https://github.com/kminjoo9093/Starbucks"
+                      class="code-link"
+                      target="_blank"
+                      >code review
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
                 </div>
                 <div class="project_info">
-                  <h2 class="title">메가스터디북스</h2>
-                  <div class="description">
-                    <p>SCSS 사용으로 효율적 스타일링,</p>
-                    <p>데이터 바인딩으로 인한 UI 동적 업데이트에 중점을 둔</p>
-                    <p>반응형 사이트 클론 코딩</p>
-                  </div>
-                  <span>작업 범위 : 메인 페이지, 로그인 페이지</span>
-                  <span>개인 작업 퍼블리싱 100%</span>
+                  <h2 class="title">스타벅스</h2>
                   <div class="skill-badges">
                     <em class="html">HTML</em>
-                    <em class="scss">SCSS</em>
+                    <em class="css">CSS</em>
                     <em class="js">JS</em>
-                    <em class="swiper">SWIPER</em>
+                    <em class="jquery">jQuery</em>
+                    <em class="bxslider">bxSlider</em>
                   </div>
-                  <div class="link-btns">
-                    <a href="" class="site-link">go<br />site</a>
-                    <a href="" class="code-link">code<br />review</a>
+                  <div class="description">
+                    <p>메인 및 서브 전 페이지를 클론하고,</p>
+                    <p>스크롤 인터랙션과 뉴스 롤링효과를 순수 JS로 구현한</p>
+                    <p>반응형 웹사이트</p>
                   </div>
+                  <span>작업 범위 : 메인, 서브, 로그인 페이지</span>
+                  <span>개인 작업 퍼블리싱 100%</span>
                 </div>
               </div>
             </div>
             <div class="piece_7">
               <div class="content-wrap">
-                <div class="card">
-                  <div class="front">
-                    <p class="num">1</p>
+                <div class="web-image">
+                  <img
+                    src="./images/preview_newspop.jpg"
+                    alt="뉴스팝 웹사이트 미리보기"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="go-links">
+                  <div class="link-border">
+                    <a
+                      href="https://kminjoo9093.github.io/NewsPop-project/"
+                      class="site-link"
+                      target="_blank"
+                      >go site
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
-                  <div class="back">
-                    <img src="./images/project_preview1.png" alt="" />
+                  <div class="link-border">
+                    <a
+                      href="https://github.com/kminjoo9093/NewsPop-project"
+                      class="code-link"
+                      target="_blank"
+                      >code review
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
                 </div>
                 <div class="project_info">
-                  <h2 class="title">메가스터디북스</h2>
-                  <div class="description">
-                    <p>SCSS 사용으로 효율적 스타일링,</p>
-                    <p>데이터 바인딩으로 인한 UI 동적 업데이트에 중점을 둔</p>
-                    <p>반응형 사이트 클론 코딩</p>
-                  </div>
-                  <span>작업 범위 : 메인 페이지, 로그인 페이지</span>
-                  <span>개인 작업 퍼블리싱 100%</span>
+                  <h2 class="title">NewsPop</h2>
                   <div class="skill-badges">
                     <em class="html">HTML</em>
-                    <em class="scss">SCSS</em>
+                    <em class="css">CSS</em>
                     <em class="js">JS</em>
-                    <em class="swiper">SWIPER</em>
                   </div>
-                  <div class="link-btns">
-                    <a href="" class="site-link">go<br />site</a>
-                    <a href="" class="code-link">code<br />review</a>
+                  <div class="description">
+                    <p>오픈 API를 활용해 데이터를 요청하여</p>
+                    <p>
+                      실시간 뉴스 확인과 키워드 기반 뉴스 검색 기능을 구현한
+                    </p>
+                    <p>반응형 웹사이트 제작</p>
                   </div>
+                  <span>작업 범위 : 메인, 서브 페이지</span>
+                  <span>개인 작업 퍼블리싱 100%</span>
                 </div>
               </div>
             </div>
             <div class="piece_8">
               <div class="content-wrap">
-                <div class="card">
-                  <div class="front">
-                    <p class="num">1</p>
+                <div class="web-image">
+                  <img src="./images/preview_qude.jpg" alt="qude 웹사이트 클론 미리보기" loading="lazy" />
+                </div>
+                <div class="go-links">
+                  <div class="link-border">
+                    <a href="" class="site-link" target="_blank"
+                      >go site
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
-                  <div class="back">
-                    <img src="./images/project_preview1.png" alt="" />
+                  <div class="link-border">
+                    <a
+                      href="https://github.com/kminjoo9093/qudeAudio"
+                      class="code-link"
+                      target="_blank"
+                      >code review
+                      <i class="bi bi-arrow-up-right" aria-hidden="true"></i
+                    ></a>
                   </div>
                 </div>
                 <div class="project_info">
-                  <h2 class="title">메가스터디북스</h2>
-                  <div class="description">
-                    <p>SCSS 사용으로 효율적 스타일링,</p>
-                    <p>데이터 바인딩으로 인한 UI 동적 업데이트에 중점을 둔</p>
-                    <p>반응형 사이트 클론 코딩</p>
-                  </div>
-                  <span>작업 범위 : 메인 페이지, 로그인 페이지</span>
-                  <span>개인 작업 퍼블리싱 100%</span>
+                  <h2 class="title">Qude Audio</h2>
                   <div class="skill-badges">
                     <em class="html">HTML</em>
-                    <em class="scss">SCSS</em>
+                    <em class="css">CSS</em>
                     <em class="js">JS</em>
-                    <em class="swiper">SWIPER</em>
+                    <em class="gsap">GSAP</em>
                   </div>
-                  <div class="link-btns">
-                    <a href="" class="site-link">go<br />site</a>
-                    <a href="" class="code-link">code<br />review</a>
+                  <div class="description">
+                    <p>GSAP 활용으로</p>
+                    <p>인터랙티브 웹 사이트 제작에 중점을 둔</p>
+                    <p>웹사이트 클론 코딩</p>
                   </div>
+                  <span>Tutorial project</span>
                 </div>
               </div>
             </div>
-
+          </div>
+        </section>
+        <section id="contact">
+          <h2 class="section-title">Contact</h2>
+          <div class="web-center">
+            <div class="piece_9">
+              <div class="question-container">
+                <span class="question-mark">?</span>
+                <span class="question-mark">?</span>
+                <span class="question-mark">?</span>
+                <span class="question-mark">?</span>
+              </div>
+              <div class="request-container">
+                <p class="request">
+                  <em class="large">W</em>ould you help me
+                  <br class="pc-br" />find the <em class="large">last piece</em>?
+                </p>
+              </div>
+            </div>
+            <div class="piece_10">
+              <div class="contact-container">
+                <p>저의 포트폴리오를 봐주셔서 감사합니다 🙂</p>
+                <p>
+                  꼭 맞는 퍼즐처럼 <br />함께 어우러지고 성장해나가는
+                  웹퍼블리셔가 되겠습니다
+                </p>
+                <p class="contact-email">
+                  <!-- <span class="contact-me">메일을 보내주세요</span> -->
+                  <a href="mailto:kminjoo9093@naver.com"
+                    >kminjoo9093@naver.com<i class="bi bi-chevron-right"></i
+                  ></a>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </div>
     </main>
-    <footer></footer>
+    <aside class="utility">
+      <a
+        class="link_github"
+        href="https://github.com/kminjoo9093"
+        aria-label="깃헙 바로가기"
+      >
+        <div class="link-content" data-content="Visit Github"></div>
+      </a>
+      <a
+        class="link_email"
+        href="mailto:kminjoo9093@naver.com"
+        aria-label="이메일 보내기"
+      >
+        <div class="link-content" data-content="Send Email"></div>
+      </a>
+    </aside>
+    <footer>
+      <div class="web-center">
+        <p>&copy; 2025 Minjoo Kang. Portfolio Site.</p>
+      </div>
+    </footer>
 
     <!-- custom js -->
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/main.js" defer></script>
   </body>
 </html>

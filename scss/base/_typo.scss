@@ -1,16 +1,22 @@
 @use "../abstracts/" as *;
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* 폰트 초기화 */
-html{font-size: 62.5%;}
-body{
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-size: 1rem;
   color: #333;
 }
 
-.section-title{
-  font-size: 6rem;
+.section-title {
+  font-size: clamp(4rem, 6vw, 6rem);
   font-weight: 700;
   letter-spacing: 2px;
   color: $color_3;
@@ -18,15 +24,21 @@ body{
   top: 0;
   left: 2rem;
   z-index: 999;
-  writing-mode:sideways-lr;
-  // text-orientation: upright;
-  // white-space: nowrap;
-  #about &{
-    // transform: rotate(-90deg) translate( -15rem, -127%);
-    // transform: translate( -15rem, -127%);
+  transform: rotate(-90deg) translate(-100%, 50%);
+  transform-origin: left;
+}
+@supports (writing-mode: sideways-lr) {
+  .section-title{
+    writing-mode: sideways-lr;
+    -webkit-writing-mode: sideways-lr;
+    transform: none;
   }
-  #project &{
-    // transform: rotate(-90deg) translate( -15rem, -110%);
-    // transform: translate( -15rem, -110%);
+}
+:is(#about, #contact) .section-title {
+  top: 10rem;
+}
+.pc-br{
+  @include screenWidth($laptop) {
+    display: none;
   }
 }
