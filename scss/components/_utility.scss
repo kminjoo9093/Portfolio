@@ -30,7 +30,7 @@
         z-index: 9;
       }
       .link-content::before{
-        background: url(../../images/icon-github.svg) no-repeat center / 4rem auto;
+        background: url(../images/icon-github.svg) no-repeat center / 4rem auto;
       }
       .link-content::after{
         color: #000;
@@ -45,7 +45,7 @@
         transform: translate(-50%, -50%);
       }
       .link-content::before{
-        background: url(../../images/icon-mail.svg) no-repeat center / 4rem auto;
+        background: url(../images/icon-mail.svg) no-repeat center / 4rem auto;
       }
     }
     .link-content {

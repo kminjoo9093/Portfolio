@@ -1205,7 +1205,7 @@ header nav ul a {
   z-index: 9;
 }
 .utility a.link_github .link-content::before {
-  background: url(../../images/icon-github.svg) no-repeat center/4rem auto;
+  background: url(../images/icon-github.svg) no-repeat center/4rem auto;
 }
 .utility a.link_github .link-content::after {
   color: #000;
@@ -1220,7 +1220,7 @@ header nav ul a {
   transform: translate(-50%, -50%);
 }
 .utility a.link_email .link-content::before {
-  background: url(../../images/icon-mail.svg) no-repeat center/4rem auto;
+  background: url(../images/icon-mail.svg) no-repeat center/4rem auto;
 }
 .utility a .link-content {
   width: 100%;
