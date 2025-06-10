@@ -22,10 +22,13 @@ body {
   color: $color_3;
   position: absolute;
   top: 0;
-  left: 2rem;
+  left: calc(4vw / 2);
   z-index: 999;
   transform: rotate(-90deg) translate(-100%, 50%);
   transform-origin: left;
+  @include screenWidth($tablet_s){
+    display: none;
+  }
 }
 @supports (writing-mode: sideways-lr) {
   .section-title{
@@ -40,5 +43,11 @@ body {
 .pc-br{
   @include screenWidth($laptop) {
     display: none;
+  }
+}
+.t-br{
+  display: none;
+  @include screenWidth($tablet) {
+    display: block;
   }
 }

@@ -28,6 +28,9 @@ header {
     @include screenWidth($tablet) {
       transform: scale(0.9);
     }
+    @include screenWidth($tablet_s) {
+      transform: scale(0.8);
+    }
     span {
       @include flexCenter;
       width: 100%;
@@ -38,13 +41,10 @@ header {
     display: flex;
     gap: 7rem;
     a {
-      font-size: 2.2rem;
+      font-size: clamp(1.6rem, 2vw, 2.2rem);
     }
     @include screenWidth($tablet) {
       gap: 4rem;
-      a {
-        font-size: 2rem;
-      }
     }
   }
 }

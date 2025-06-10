@@ -8,4 +8,7 @@
 
 .padInline{
   padding-inline: 10rem;
+  @include screenWidth($tablet_s){
+    padding-inline: 2rem;
+  }
 }

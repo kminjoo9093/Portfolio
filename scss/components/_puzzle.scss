@@ -144,6 +144,9 @@
 #contact {
   [class^="piece"] {
     min-height: 70rem;
+    @include screenWidth($tablet_s) {
+      min-height: 50rem;
+    }
   }
   .piece_9 {
     border-radius: 0 0 0 10rem;

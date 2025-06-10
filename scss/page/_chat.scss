@@ -27,6 +27,10 @@
     background-position: 0 0;
     position: fixed;
     z-index: 100;
+    @include screenWidth($tablet_s){
+      width: 80%;
+      padding: 4rem 1rem;
+    }
     &-top {
       h2 {
         font-size: clamp(2.6rem, 2.8vw, 3.2rem);
@@ -68,7 +72,8 @@
     }
     &-profile {
       border: 0.2rem solid #000;
-      width: 7rem;
+      max-width: 7rem;
+      width: 10vw;
       aspect-ratio: 1;
       border-radius: 50%;
       overflow: hidden;
@@ -84,7 +89,7 @@
     }
   }
   .speak {
-    font-size: clamp(1.8rem, 1.6vw, 2rem);
+    font-size: clamp(1.6rem, 1.6vw, 2rem);
     font-weight: 500;
     line-height: 1.5em;
     letter-spacing: 0.1em;

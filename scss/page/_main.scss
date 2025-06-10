@@ -44,7 +44,7 @@ html {
         }
       }
       .profile-img {
-        width: 20rem;
+        max-width: 20rem;
         aspect-ratio: 1;
         border-radius: 50%;
         border: 0.5rem solid #000;
@@ -88,7 +88,7 @@ html {
         }
       }
       .attitude {
-        font-size: 2rem;
+        font-size: clamp(1.7rem, 1.5vw, 2rem);
         margin-top: 8rem;
         overflow: hidden;
         p {
@@ -111,7 +111,7 @@ html {
       @include flexCenter;
       .qualifications {
         h3 {
-          font-size: 2.4rem;
+          font-size: clamp(2rem, 2vw, 2.4rem);
           font-weight: 600;
           text-transform: uppercase;
           padding-bottom: 1.5rem;
@@ -124,7 +124,7 @@ html {
             padding-bottom: 4rem;
           }
           li {
-            font-size: 1.8rem;
+            font-size: clamp(1.6rem, 1.5vw, 1.8rem);
             line-height: 3rem;
           }
         }
@@ -132,7 +132,7 @@ html {
           display: flex;
           gap: 2rem;
           li {
-            width: 7rem;
+            max-width: 7rem;
             aspect-ratio: 1;
             img {
               width: 100%;
@@ -191,14 +191,14 @@ html {
     margin-top: 4rem;
     padding-inline: 2rem;
     .title {
-      font-size: 3.2rem;
+      font-size: clamp(2.6rem, 1.5vw, 3.2rem);
       font-weight: 700;
       padding-bottom: 2rem;
     }
     .description {
       padding-bottom: 2rem;
       p {
-        font-size: 2rem;
+        font-size: clamp(1.7rem, 1.5vw, 2rem);
         line-height: 1.5em;
       }
     }
@@ -239,7 +239,7 @@ html {
     a {
       display: inline-block;
       padding: 0.8rem 1.2rem;
-      font-size: 1.8rem;
+      font-size: clamp(1.5rem, 1.5vw, 1.8rem);
       font-weight: 500;
       text-transform: uppercase;
       color: $color_18;
@@ -341,23 +341,21 @@ html {
   .piece_10 {
     @include flexCenter;
     color: $color_18;
+    .contact-container{
+      margin: 0 auto;
+    }
     p {
+      font-size: clamp(1.8rem, 1.7vw, 2.4rem);
       font-weight: 500;
       line-height: 1.5em;
       margin-bottom: 3rem;
     }
-    p,
-    .contact-me {
-      font-size: clamp(1.8rem, 1.7vw, 2.4rem);
-    }
-    .contact-email {
+    .contact-email{
       margin-top: 7rem;
-      .contact-me {
-        display: block;
-        margin-bottom: 1rem;
-      }
+    }
+    .contact-email, .contact-github {
       a {
-        font-size: clamp(2.4rem, 2vw, 3rem);
+        font-size: clamp(2rem, 2vw, 3rem);
         font-weight: 600;
         opacity: 0.6;
         transition: 0.35s;

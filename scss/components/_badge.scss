@@ -26,5 +26,8 @@
     padding-inline: 1em;
     line-height: 1.6em;
     border-radius: 1.6rem;
+    @include screenWidth($tablet){
+      margin-bottom: 1rem;
+    }
   }
 }
