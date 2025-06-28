@@ -27,6 +27,8 @@
   }
   &::before {
     content: "";
+    mask-image: linear-gradient(to right, transparent 0%, #fff 50%, #000 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #fff 50%,#000 100%);
     width: 25%;
     aspect-ratio: 1;
     border-right: 1rem solid $color_18;
@@ -36,7 +38,6 @@
     right: 0;
     top: 50%;
     transform: translate(50%, -50%);
-    z-index: -1;
     @include screenWidth($laptop) {
       width: 17%;
       right: 50%;
@@ -60,6 +61,8 @@
   }
   &::before {
     content: "";
+    mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%, #000 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%,#000 100%);
     width: 20%;
     aspect-ratio: 1;
     border-bottom: 1rem solid $color_18;
@@ -81,6 +84,8 @@
     &:not(:nth-child(1)) {
       &::before {
         content: "";
+        mask-image: linear-gradient(to top, transparent 0%, #fff 50%, #000 100%);
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, #fff 50%,#000 100%);
         width: 25%;
         aspect-ratio: 1;
         border-top: 1rem solid $color_18;
@@ -98,6 +103,8 @@
     }
     &::after {
       content: "";
+      mask-image: linear-gradient(to right, transparent 0%, #fff 50%, #000 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, #fff 50%,#000 100%);
       width: 23%;
       aspect-ratio: 1;
       border-right: 1rem solid $color_18;
@@ -122,6 +129,8 @@
     box-shadow: inset 0 -0.2rem 0.3rem $color_18;
     &::before {
       content: "";
+      mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%, #000 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%,#000 100%);
       width: 25%;
       aspect-ratio: 1;
       border-bottom: 1rem solid $color_18;

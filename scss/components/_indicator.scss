@@ -13,19 +13,19 @@
     height: 0.7rem;
     background-color: #fff;
     opacity: 0;
+    will-change: transform, opacity;
   }
   .arrow-l{
-    transform: translateX(50%) skewY(35deg);
     animation: indicator-l 1s ease-in-out infinite 5s;
   }
   .arrow-r{
-    transform: translateX(50%) skewY(-35deg);
     animation: indicator-r 1s ease-in-out infinite 5s;
   }
 }
 @keyframes indicator-l{
   0%{
     opacity: 1;
+    transform: translateX(50%) skewY(35deg) translateY(0);
   }
   100%{
     opacity: 0;
@@ -35,6 +35,7 @@
 @keyframes indicator-r{
   0%{
     opacity: 1;
+    transform: translateX(50%) skewY(-35deg) translateY(0);
   }
   100%{
     opacity: 0;

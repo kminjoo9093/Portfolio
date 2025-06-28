@@ -984,19 +984,19 @@ header nav ul a {
   height: 0.7rem;
   background-color: #fff;
   opacity: 0;
+  will-change: transform, opacity;
 }
 .scroll-indicator .arrow-l {
-  transform: translateX(50%) skewY(35deg);
   animation: indicator-l 1s ease-in-out infinite 5s;
 }
 .scroll-indicator .arrow-r {
-  transform: translateX(50%) skewY(-35deg);
   animation: indicator-r 1s ease-in-out infinite 5s;
 }
 
 @keyframes indicator-l {
   0% {
     opacity: 1;
+    transform: translateX(50%) skewY(35deg) translateY(0);
   }
   100% {
     opacity: 0;
@@ -1006,6 +1006,7 @@ header nav ul a {
 @keyframes indicator-r {
   0% {
     opacity: 1;
+    transform: translateX(50%) skewY(-35deg) translateY(0);
   }
   100% {
     opacity: 0;
@@ -1050,6 +1051,8 @@ header nav ul a {
 .piece_1::before,
 .piece_9::before {
   content: "";
+  mask-image: linear-gradient(to right, transparent 0%, #fff 50%, #000 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #fff 50%, #000 100%);
   width: 25%;
   aspect-ratio: 1;
   border-right: 1rem solid #675D50;
@@ -1059,7 +1062,6 @@ header nav ul a {
   right: 0;
   top: 50%;
   transform: translate(50%, -50%);
-  z-index: -1;
 }
 @media (max-width: 1400px) {
   .piece_1::before,
@@ -1092,6 +1094,8 @@ header nav ul a {
 }
 .piece_2::before {
   content: "";
+  mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%, #000 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%, #000 100%);
   width: 20%;
   aspect-ratio: 1;
   border-bottom: 1rem solid #675D50;
@@ -1114,6 +1118,8 @@ header nav ul a {
 }
 #projects [class*=piece]:nth-child(2n-1):not(:nth-child(1))::before {
   content: "";
+  mask-image: linear-gradient(to top, transparent 0%, #fff 50%, #000 100%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #fff 50%, #000 100%);
   width: 25%;
   aspect-ratio: 1;
   border-top: 1rem solid #675D50;
@@ -1132,6 +1138,8 @@ header nav ul a {
 }
 #projects [class*=piece]:nth-child(2n-1)::after {
   content: "";
+  mask-image: linear-gradient(to right, transparent 0%, #fff 50%, #000 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #fff 50%, #000 100%);
   width: 23%;
   aspect-ratio: 1;
   border-right: 1rem solid #675D50;
@@ -1158,6 +1166,8 @@ header nav ul a {
 }
 #projects [class*=piece]:nth-child(2n)::before {
   content: "";
+  mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%, #000 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #fff 48%, #000 100%);
   width: 25%;
   aspect-ratio: 1;
   border-bottom: 1rem solid #675D50;
